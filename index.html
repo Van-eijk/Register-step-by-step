@@ -61,7 +61,7 @@
         var tabCourrante = 0; // Variable permettant d'afficher une tab (formulaire) en fonction de sa valeur
 
         afficherTab(tabCourrante); // Excécution de la fonction permettant d'afficher un formulaire
-
+        
 
         /* Définition de la fonction permettant d'afficher un formulaire indiqué */
 
@@ -70,8 +70,12 @@
 
 
             var listeTab = document.getElementsByClassName("tab");  // On récupère la liste des élements (formulaire) dont l'attribut class a pour valeur "tab"
+            
+            var listeStep = document.getElementsByClassName("step");
 
             listeTab[n].style.display = "flex"; // On affiche le formulaire indiqué en argument de la fonction
+
+            listeStep[n].style.backgroundColor = "blueviolet";
 
         }
 
@@ -110,7 +114,10 @@
 
             var i = 0 ;
 
+            var listeStep = document.getElementsByClassName("step"); // On récupère la liste des différentes etapes du formulaire
+
             var listeTab = document.getElementsByClassName("tab");
+
             for( i = 0 ; i < listeTab.length ; i++){
                 listeTab[i].style.display = "none";
             }
@@ -126,6 +133,14 @@
             }
 
             afficherTab(tabCourrante); // On affiche le formulaire courant
+
+
+            /* ici on met la couleur blanche sur toutes les étapes qui sont supérieures à l'étape actuel */
+
+            for( i = (tabCourrante + 1) ; i < listeStep.length ; i++){
+
+                listeStep[i].style.backgroundColor = "white";
+            }
 
         }
 
