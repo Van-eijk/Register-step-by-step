@@ -47,6 +47,8 @@ input{
     font-size: large;
     color: blueviolet;
 
+    padding-left: 35px;
+
 }
 
 .bouton{
@@ -99,4 +101,50 @@ button:hover{
     background-color: white;
     margin: 5px;
     margin-top: 20px;
+}
+
+
+/*  gestion des icons  */
+
+i{
+    color: blueviolet;
+    font-size: 20px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px ;
+}
+
+#firstName{
+    position: relative;
+    top: 45px;
+    left: 9px;
+}
+
+#lastName{
+    position: relative;
+    top: 66px;
+    left: 9px;
+}
+
+#mail{
+    position: relative;
+    top: 48px;
+    left: 9px;
+}
+
+#phone{
+    position: relative;
+    top: 66px;
+    left: 9px;
+}
+
+#pwd{
+    position: relative;
+    top: 45px;
+    left: 9px;
+}
+
+#confirmPwd{
+    position: relative;
+    top: 66px;
+    left: 9px;
 }
