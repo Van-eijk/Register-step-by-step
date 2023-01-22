@@ -24,7 +24,7 @@
 
                 <div class="tab">
                     <p> Address</p>
-                    <input type="text" placeholder="City">
+                    <input type="email" placeholder="email">
                     <input type="tel" placeholder="Number phone">
                 </div>
 
@@ -38,10 +38,12 @@
             </form>
 
             <div class="bouton">
-                <button id="btnP" onclick="previousButton()"> PREV</button>
+                <button id="btnP" onclick="previousButton()"> PREVIOUS</button>
                 <button onclick="nextButton()" id="btnN"> NEXT</button>
 
             </div>
+
+           
 
             <div class="steps">
                 <div class="step"></div>
@@ -97,12 +99,12 @@
             /* Cette condition nous permet de désactiver le bouton "NEXT" au cas où on se trouve au dernier formulaire de la liste */
             if(tabCourrante >= (listeTab.length - 1)){
                 document.getElementById("btnN").disabled = true;
+                document.getElementById("btnN").innerHTML = "SIGN UP";
 
             }
 
             afficherTab(tabCourrante); // On affiche le formulaire qui correspont à la valeur de la variable
             document.getElementById("btnP").style.display = "flex";  // On fait apparaitre le bouton "PREVIOUS"
-  
         }
 
 
@@ -111,6 +113,8 @@
         function previousButton(){
 
             document.getElementById("btnN").disabled = false; // On active le bouton "NEXT" au cas où il est désactivé
+            document.getElementById("btnN").innerHTML = "NEXT"; // On modifie le nom
+
 
             var i = 0 ;
 

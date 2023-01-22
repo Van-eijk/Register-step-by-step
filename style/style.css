@@ -1,6 +1,6 @@
 html{
-    height: 100%;
-    width: 100%;
+    height: 98%;
+    width: 98%;
 }
 
 body{
@@ -8,6 +8,12 @@ body{
     width: 100%;
     color: blueviolet;
     box-sizing: border-box;
+}
+
+p{
+    text-align: center;
+    font-weight: bold;
+    font-size: x-large;
 }
 
 #main{
@@ -23,7 +29,7 @@ body{
 #mainContent{
     display: flex;
     flex-direction: column;
-    border: 3px solid red;
+    border: 3px solid blueviolet;
     border-radius: 10px;
     padding: 20px;
 }
@@ -34,24 +40,50 @@ body{
 
 input{
     margin: 5px;
+    margin-bottom: 10px; 
+    outline: none;
+    border: none;
+    border-bottom: 3px solid blueviolet;
+    font-size: large;
+    color: blueviolet;
+
 }
 
 .bouton{
     display: flex;
     justify-content: center;
+    text-align: center;
+
 }
 
 button{
     margin: 2px;
+    cursor: pointer;
+    text-align: center;
+    font-size: large;
+    border-radius: 9px;
+    background-color: white;
+    border: 2px solid blueviolet;
+    color: blueviolet;
+}
+
+button:disabled{
+    opacity: 0.3;
+}
+
+button:hover{
+    background-color: blueviolet;
+    color: white;
 }
 
 #btnP{
     display: none;
-    flex-grow: 1;
+    flex: 1;
+    text-align: center;
 }
 
 #btnN{
-    flex-grow: 1;
+    flex: 1;
 }
 
 .steps{
