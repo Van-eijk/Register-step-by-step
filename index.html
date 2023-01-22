@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Ce petit formulaire permet à l'utilisateur de s'enregistrer étape par etape -->
+
+
+   <div id="main">
+        <div id="mainContent">
+            <h1>Resgister step by step</h1>
+            <form action="">
+                <div class="tab">
+                    <p> Name</p>
+                    <input type="text" placeholder="first name">
+                    <input type="text" placeholder="last name">
+                </div>
+
+                <div class="tab">
+                    <p> Address</p>
+                    <input type="text" placeholder="City">
+                    <input type="tel" placeholder="Number phone">
+                </div>
+
+                <div class="tab">
+                    <p> Password</p>
+                    <input type="password" placeholder="password">
+                    <input type="password" placeholder="Confirm password">
+                </div>
+
+                
+            </form>
+
+            <div class="bouton">
+                <button id="btnP" onclick="previousButton()"> PREV</button>
+                <button onclick="nextButton()" id="btnN"> NEXT</button>
+
+            </div>
+
+            <div class="steps">
+                <div class="step"></div>
+                <div class="step"></div>
+                <div class="step"></div>
+
+            </div>
+            
+        </div>
+
+   </div>
+
+
+    <script>
+
+
+        var tabCourrante = 0; // Variable permettant d'afficher une tab (formulaire) en fonction de sa valeur
+
+        afficherTab(tabCourrante); // Excécution de la fonction permettant d'afficher un formulaire
+
+
+        /* Définition de la fonction permettant d'afficher un formulaire indiqué */
+
+
+        function afficherTab(n){
+
+
+            var listeTab = document.getElementsByClassName("tab");  // On récupère la liste des élements (formulaire) dont l'attribut class a pour valeur "tab"
+
+            listeTab[n].style.display = "flex"; // On affiche le formulaire indiqué en argument de la fonction
+
+        }
+
+
+        /* ici on définit la fonction qui nous permet de passer du formulaire courant au formulaire suivant */
+
+        function nextButton(){
+
+            var i = 0 ; // On définit une variable quelconque qui nous permettra de parcourir la liste des elements (formulaires) sous forme de tableau
+
+            var listeTab = document.getElementsByClassName("tab"); // On récupère la liste des elements (formulaire)
+            for( i = 0 ; i < listeTab.length ; i++){
+                listeTab[i].style.display = "none"; // On désactive tous les formulaires
+            }
+
+            tabCourrante ++ ; // On incrémente la variable nous permettant d'afficher un formulaire indiqué
+
+
+            /* Cette condition nous permet de désactiver le bouton "NEXT" au cas où on se trouve au dernier formulaire de la liste */
+            if(tabCourrante >= (listeTab.length - 1)){
+                document.getElementById("btnN").disabled = true;
+
+            }
+
+            afficherTab(tabCourrante); // On affiche le formulaire qui correspont à la valeur de la variable
+            document.getElementById("btnP").style.display = "flex";  // On fait apparaitre le bouton "PREVIOUS"
+  
+        }
+
+
+         /* ici on définit la fonction qui nous permet de passer du formulaire courant au formulaire précédent */
+
+        function previousButton(){
+
+            document.getElementById("btnN").disabled = false; // On active le bouton "NEXT" au cas où il est désactivé
+
+            var i = 0 ;
+
+            var listeTab = document.getElementsByClassName("tab");
+            for( i = 0 ; i < listeTab.length ; i++){
+                listeTab[i].style.display = "none";
+            }
+
+            tabCourrante -- ; // On décrémente la variable nous permettant d'afficher un formulaire indiqué
+
+
+            /* Si la variable "tabCourante" est inférieur ou égale à "0", on fait disparaitre le bouton "PREVIOUS" */
+
+            if(tabCourrante <= 0){
+                document.getElementById("btnP").style.display = "none";
+
+            }
+
+            afficherTab(tabCourrante); // On affiche le formulaire courant
+
+        }
+
+        
+    </script>
+</body>
+</html>

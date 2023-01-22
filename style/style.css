@@ -1,0 +1,70 @@
+html{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    color: blueviolet;
+    box-sizing: border-box;
+}
+
+#main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+}
+
+#mainContent{
+    display: flex;
+    flex-direction: column;
+    border: 3px solid red;
+    border-radius: 10px;
+    padding: 20px;
+}
+.tab{
+    display: none;
+    flex-direction: column;
+}
+
+input{
+    margin: 5px;
+}
+
+.bouton{
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    margin: 2px;
+}
+
+#btnP{
+    display: none;
+    flex-grow: 1;
+}
+
+#btnN{
+    flex-grow: 1;
+}
+
+.steps{
+    display: flex;
+    justify-content: center;
+}
+
+.step{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    border: 3px solid blueviolet;
+    background-color: white;
+    margin: 5px;
+    margin-top: 20px;
+}
